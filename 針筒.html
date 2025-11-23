@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>針筒</title>
+    <style>
+        /* *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            box-sizing: border-box;
+        } */
+
+
+        /* --------------------------- */
+        /* (最底)父>before>after(最上面) */
+
+        .box {
+            width: 400px;
+            height: 100px;
+            border: 1px solid #aaaaaa;
+            /* background-color: transparent; */
+            background: linear-gradient(white, lightgray, white);
+            /* 讓box放畫面置中 */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* 往上 height/2、往左 width/2 */
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        /* 活塞桿 頭 */
+        .box::after {
+            border-radius: 20%;
+            content: "";
+            width: 40px;
+            height: 100px;
+            position: absolute;
+            left: -20%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid #AAAAAA;
+            background: linear-gradient(white, lightgray, white);
+        }
+
+
+        /* 黃色液體 */
+        .liq {
+            /* content: ""; */
+            /* background: #FFFFC0; */
+            background: linear-gradient(rgb(241, 241, 180),rgb(160, 160, 118),rgb(241, 241, 180) 125px);
+            width: 200px;
+            height: 100px;
+            position: absolute;
+            right: -25%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+
+
+
+        .scale {
+            background-image: linear-gradient(90deg, transparent 50%, transparent 98%, black 100%);
+            background-repeat: repeat-x;
+            background-size: 20px 20px;
+            /* background: white; */
+            width: 400px;
+            height: 20px;
+            position: absolute;
+            left: 50%;
+            top: calc(50% - 40px);
+            transform: translate(-50%, -50%);
+            /* 讓刻度在上層 */
+            z-index: 1;
+        }
+
+        .piston {
+            width: 40px;
+            height: 100px;
+            background: black;
+            position: absolute;
+            left: 48%;
+            top: 50%;
+            transform: translate(-50%, -50%)
+        }
+
+
+
+
+        /* 活塞桿-左 */
+        .piston::before {
+            content: "";
+            width: 65px;
+            height: 60px;
+            border: 1px solid #aaaaaa;
+            background: linear-gradient(white, lightgray, white);
+            position: absolute;
+            left: -205px;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            /* z-index:-1; */
+        }
+
+        /* 活塞桿-右 */
+        .piston::after {
+            content: "";
+            width: 48px;
+            height: 60px;
+            border: 1px solid #aaaaaa;
+            background: transparent;
+            position: absolute;
+            left: calc(50% + 232.5px);
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 0 5px 5px 0;
+            /* z-index: -1; */
+            background: linear-gradient(white, lightgray, white);
+        }
+
+
+        .box h5 {
+            position: absolute;
+            top: 60%;
+            left: 5px;
+            font-family: "微軟正黑體";
+            color: #AAAAAA;
+
+            /* transform: translate(-50%,-50%); */
+
+        }
+
+        /* 針頭 */
+        .needle {
+            /* content: ""; */
+            width: 75px;
+            height: 1px;
+            position: absolute;
+            left: calc(50% + 200px + 50px + 37px);
+            top: 50%;
+            transform: translate(-50%, -50%);
+            /* border: 1px solid black; */
+            background: black;
+
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="box">
+        <h5>Made in Taiwan</h5>
+        <div class="piston"></div>
+        <div class="liq"></div>
+        <div class="scale"></div>
+        <div class="needle"></div>
+    </div>
+    <div class="head"></div>
+    <!-- <div class="container">
+    </div> -->
+
+</body>
+
+</html>

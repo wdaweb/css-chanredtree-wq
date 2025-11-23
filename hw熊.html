@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .bear {
+        width: 450px;
+        height: 450px;
+        background-color: transparent;
+        border-radius: 50%;
+        /* 下列!!網頁正中央置中 */
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .face {
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .face-white {
+        width: 200px;
+        height: 150px;
+        border-radius: 50%;
+        background-color: white;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    .nose {
+        width: 50px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: black;
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        transform: translateX(-50%);
+
+    }
+
+    .mouth-black {
+        width: 130px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: black;
+        position: absolute;
+        left: 50%;
+        top: 60%;
+        transform: translate(-50%, -50%);
+    }
+
+    .eye {
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+
+    }
+
+    .eye::before {
+        content: "";
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 10px solid white;
+        background-color: black;
+        position: absolute;
+        top: -115%;
+        left: 25%;
+    }
+
+
+    .eye::after {
+        content: "";
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 10px solid white;
+        background-color: black;
+        position: absolute;
+        top: -115%;
+        right: 25%;
+    }
+
+
+
+    .ear {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 0;
+
+    }
+
+    .ear::before {
+        content: "";
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 10px solid black;
+        background-color: white;
+        position: absolute;
+        top: 0;
+        left: 10%;
+    }
+
+
+    .ear::after {
+        content: "";
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 10px solid black;
+        background-color: white;
+        position: absolute;
+        top: 10px;
+        right: 10%;
+    }
+
+    .blush {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    .blush::before {
+        content: "";
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: red;
+        position: absolute;
+        top: 0;
+        left: -5%;
+    }
+
+    .blush::after {
+        content: "";
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: red;
+        position: absolute;
+        top: 0;
+        right: -5%;
+    }
+
+
+    .chast {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    .chest::before {
+        content: "";
+        width: 50px;
+        height: 50px;
+        transform: skewX(50deg);
+        transform-origin: center bottom;
+        position: absolute;
+        background: white;
+        top: 70%;
+        left: 40%;
+
+    }
+
+    .chest::after {
+        content: "";
+        width: 50px;
+        height: 50px;
+        transform: skewX(-50deg);
+        transform-origin: center bottom;
+        background: white;
+        position: absolute;
+        top: 70%;
+        /* 胸前V行不會鏡射??????????? */
+        right: 40%;
+
+    }
+</style>
+
+<body>
+    <div class="bear">
+        <div class="face"></div>
+        <div class="face-white">
+            <div class="nose"></div>
+            <div class="mouth-black"></div>
+        </div>
+
+        <div class="blush"></div>
+        <div class="eye"></div>
+        <div class="ear"></div>
+        <div class="chest"></div>
+
+    </div>
+</body>
+
+</html>
